@@ -3,7 +3,9 @@ from flask_cors import CORS
 import util
 app = Flask(__name__)
 CORS(app)
+util.load_saved_artifacts()
 @app.route('/classify_image', methods = ['GET', 'POST'])
+
 def classify_image():
     image_data = request.form['image_data']
 
